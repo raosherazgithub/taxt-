@@ -1,55 +1,58 @@
-## Found the Issue!
+# Screenshots
 
-Your VDI virtual capacity is already **82015 MB (~80 GB)** but only **24 GB is actually used** on disk. So Kali already has 80 GB allocated virtually!
+## ss1
+![ss1](ss1.png)
 
----
+## ss2
+![ss2](ss2.png)
 
-## The Real Problem is Inside Kali
+## ss3
+![ss3](ss3.png)
 
-The VDI is big enough, but **Kali's partition hasn't been extended** to use all that space. You need to fix this inside Kali.
+## ss4
+![ss4](ss4.png)
 
----
+## ss5
+![ss5](ss5.png)
 
-## ⚠️ Also — VM is Still Running!
+## ss6
+![ss6](ss6.png)
 
-The output shows:
-```
-In use by VMs: kali-linux-2026.1-virtualbox-amd64
-```
-**Shut down Kali completely first** before doing anything!
+## ss7
+![ss7](ss7.png)
 
----
+## ss8
+![ss8](ss8.png)
 
-## Fix: Extend Partition Inside Kali
+## ss9
+![ss9](ss9.png)
 
-Boot into Kali, open terminal and run:
+## ss10
+![ss10](ss10.png)
 
-```bash
-# Check current disk layout
-lsblk
+## ss11
+![ss11](ss11.png)
 
-# Install GParted
-sudo apt install gparted -y
+## ss12
+![ss12](ss12.png)
 
-# Open GParted GUI
-sudo gparted
-```
+## ss13
+![ss13](ss13.png)
 
-In GParted:
-1. You'll see your main partition with **lots of unallocated space** next to it
-2. Right-click main partition → **Resize/Move**
-3. Drag the arrow to the **far right** to use all space
-4. Click **Apply**
+## ss14
+![ss14](ss14.png)
 
----
+## ss15
+![ss15](ss15.png)
 
-## Quick Check Inside Kali Terminal
+## ss16
+![ss16](ss16.png)
 
-Run this to confirm how much space Kali sees:
+## ss17
+![ss17](ss17.png)
 
-```bash
-df -h
-lsblk
-```
+## ss18
+![ss18](ss18.png)
 
-**Boot into Kali and share the output of `lsblk`** — that will show exactly what needs to be extended! 🎯
+## ss245
+![ss245](ss245.png)
